@@ -88,5 +88,5 @@ if __name__ == "__main__":
                 break
             print("Done")
         
-        with open("fixed/voice.list", "w") as f:
+        with open(list_path, "w") as f:
             f.write("".join(voice_list[i+1:]))
