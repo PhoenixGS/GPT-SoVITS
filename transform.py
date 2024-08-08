@@ -1,11 +1,18 @@
 import os
 import playsound
 import librosa
+import argparse
 
 def play_sound(file_path):
     playsound.playsound(file_path, block=False)
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-i", "--input", type=str, required=True,
+                        help="Path to the list file.")
+    args = parser.parse_args()
+    list_path = args.input
+
     output_path = "data"
     if not os.path.exists(output_path):
         os.makedirs(output_path)
@@ -22,7 +29,7 @@ if __name__ == "__main__":
     if not os.path.exists(path_2):
         os.makedirs(path_2)
 
-    with open("fixed/voice.list", "r") as f:
+    with open(list_path, "r") as f:
         voice_list = f.readlines()
 
     idx_0 = 0
