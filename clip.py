@@ -37,8 +37,8 @@ for index in range(len(not_silence_ranges)):
                                                     seek_step=1)
     new_start_position = new_no_silence[0][0]
     new_end_position = new_no_silence[0][1]
-    json_dict2["StartPosition"] = new_start_position - new.duration_seconds / 4
-    json_dict2["EndPosition"] = new_end_position + new.duration_seconds / 4
+    json_dict2["StartPosition"] = new_start_position - new.duration_seconds * 1000 / 5
+    json_dict2["EndPosition"] = new_end_position + new.duration_seconds * 1000 / 5
     json_dict2["Duration"] = int(new.duration_seconds*1000)
     json_dict[file_name] = json_dict2
 res = json.dumps(json_dict, indent=4, ensure_ascii=False)
