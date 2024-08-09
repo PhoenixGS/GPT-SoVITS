@@ -10,7 +10,7 @@ audio_path = sys.argv[1]
 min_silence_len = int(sys.argv[2])
 silence_thresh = int(sys.argv[3])
 # 创建记过保存目录
-folder = os.path.split(audio_path)[0] + "6_voice"
+folder = os.path.split(audio_path)[0] + "7_voice"
 if not os.path.exists(folder):
     os.mkdir(folder)
 audio_type = os.path.splitext(audio_path)[-1][1:]
